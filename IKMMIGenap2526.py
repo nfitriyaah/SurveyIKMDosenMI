@@ -51,7 +51,7 @@ if st.button("Show"):
             def color_label(val):
                 return 'color: red' if val == 'Belum' else ''
 
-            styled_data = student_courses[['Matakuliah', 'Data Matakuliah']].style.applymap(color_label, subset=['Data Matakuliah'])
+            styled_data = (student_courses[['Matakuliah', 'Data Matakuliah']].style.map(color_label, subset=['Data Matakuliah']))
 
             # Show the result
             st.subheader(f"Berikut Hasil Pengisian Survey oleh NIM: {student_id}")
