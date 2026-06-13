@@ -84,8 +84,14 @@ if st.button("Show"):
                 """
 
             html += "</table>"
-            
-            st.markdown(html, unsafe_allow_html=True)
+            st.markdown("""
+                <table border='1'>
+                    <tr>
+                        <td>TEST</td>
+                    </tr>
+                </table>
+            """, unsafe_allow_html=True)
+            #st.markdown(html, unsafe_allow_html=True)
           
         else:
             st.warning(f"No courses found for Student ID {student_id}")
