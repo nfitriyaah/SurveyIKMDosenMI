@@ -84,7 +84,7 @@ if st.button("Show"):
                 """
 
             html += "</table>"
-            st.write(html[:300])
+            
             st.markdown(html, unsafe_allow_html=True)
           
         else:
