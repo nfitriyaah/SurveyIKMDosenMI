@@ -8,6 +8,8 @@ def load_data():
 
     # Load both course database and response data
     course_database = pd.read_csv(DATABASE_SHEET_URL)
+    st.write(course_database.columns.tolist())
+    st.stop()
     response_data = pd.read_csv(RESPONSE_SHEET_URL)
 
     # Clean up data (strip and lowercase for consistency)
