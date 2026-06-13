@@ -85,8 +85,7 @@ if st.button("Show"):
 
             for _, row in result.iterrows():
                     color = "red" if row['IKM'] == "Belum" else "green"
-
-                html += f """
+                html += f"""
                 <tr>
                     <td style='border:1px solid black; padding:8px; text-align:center;'>{row['No']}</td>
                     <td style='border:1px solid black; padding:8px;'>{row['Matakuliah']}</td>
