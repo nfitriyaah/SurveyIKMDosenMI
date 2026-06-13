@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import streamlit.components.v1 as components
 
 # Function to load and clean data 
 def load_data():
@@ -84,8 +85,8 @@ if st.button("Show"):
                 """
 
             html += "</table>"
-            
-            st.markdown(html, unsafe_allow_html=True)
+            components.html(html, height=400)
+            #st.markdown(html, unsafe_allow_html=True)
           
         else:
             st.warning(f"No courses found for Student ID {student_id}")
