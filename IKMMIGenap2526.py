@@ -84,7 +84,7 @@ if st.button("Show"):
             """
 
             for _, row in result.iterrows():
-                    color = "red" if row['IKM'] == "Belum" else "green"
+                color = "red" if row['IKM'] == "Belum" else "green"
                 html += f"""
                 <tr>
                     <td style='border:1px solid black; padding:8px; text-align:center;'>{row['No']}</td>
@@ -95,7 +95,7 @@ if st.button("Show"):
                </tr>
                 """
 
-                html += "</table>"
+           html += "</table>"
 
             st.markdown(html, unsafe_allow_html=True)
           
