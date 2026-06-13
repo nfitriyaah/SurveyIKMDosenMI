@@ -54,15 +54,40 @@ if st.button("Show"):
             styled_data = (student_courses[['Matakuliah', 'Data Matakuliah']].style.map(color_label, subset=['Data Matakuliah']))
 
             # Show the result
-            st.subheader(f"Berikut Hasil Pengisian Survey oleh NIM: {student_id}")
-            result = student_courses[['Matakuliah', 'Data Matakuliah']].copy()
-            result.insert(0, 'No', range(1, len(result) + 1))
-            result['Data Matakuliah'] = result['Data Matakuliah'].replace({
-            'Sudah': '✅ Sudah',
-            'Belum': '❌ Belum'
-           })
-            result.rename(columns={'Data Matakuliah': 'IKM'}, inplace=True)
-            st.table(result)
+           st.subheader(f"Berikut Hasil Pengisian Survey oleh NIM: {student_id}")
+
+result = student_courses[['Matakuliah', 'Data Matakuliah']].copy()
+result.insert(0, 'No', range(1, len(result) + 1))
+
+result.rename(columns={
+    'Data Matakuliah': 'IKM'
+}, inplace=True)
+
+html = """
+<table style='border-collapse: collapse; width: 100%;'>
+    <tr>
+        <th style='border:1px solid black; padding:8px; text-align:center;'>No</th>
+        <th style='border:1px solid black; padding:8px; text-align:center;'>Matakuliah</th>
+        <th style='border:1px solid black; padding:8px; text-align:center;'>IKM</th>
+    </tr>
+"""
+
+for _, row in result.iterrows():
+    color = "red" if row['IKM'] == "Belum" else "green"
+
+    html += f"""
+    <tr>
+        <td style='border:1px solid black; padding:8px; text-align:center;'>{row['No']}</td>
+        <td style='border:1px solid black; padding:8px;'>{row['Matakuliah']}</td>
+        <td style='border:1px solid black; padding:8px; color:{color}; font-weight:bold; text-align:center;'>
+            {row['IKM']}
+        </td>
+    </tr>
+    """
+
+html += "</table>"
+
+st.markdown(html, unsafe_allow_html=True)
         else:
             st.warning(f"No courses found for Student ID {student_id}")
     else:
