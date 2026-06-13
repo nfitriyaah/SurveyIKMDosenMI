@@ -9,8 +9,7 @@ def load_data():
     # Load both course database and response data
     course_database = pd.read_csv(DATABASE_SHEET_URL)
     response_data = pd.read_csv(RESPONSE_SHEET_URL)
-    st.write(response_data.columns.tolist())
-    st.stop()
+   
 
     # Clean up data (strip and lowercase for consistency)
     course_database['Matakuliah'] = course_database['Matakuliah'].str.strip().str.upper()
@@ -18,7 +17,7 @@ def load_data():
 
     # Ensure NIM columns are of the same type for comparison
     course_database['NIM'] = course_database['NIM'].astype(str)
-    response_data['NIM'] = response_data['NIM'].astype(str)
+    response_data['NIM '] = response_data['NIM '].astype(str)
 
     return course_database, response_data
 
