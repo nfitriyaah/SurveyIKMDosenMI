@@ -55,7 +55,9 @@ if st.button("Show"):
 
             # Show the result
             st.subheader(f"Berikut Hasil Pengisian Survey oleh NIM: {student_id}")
-            st.dataframe(styled_data)
+            result = student_courses[['Matakuliah', 'Data Matakuliah']].copy()
+            esult.insert(0, 'No', range(1, len(result) + 1))
+            st.table(result)
         else:
             st.warning(f"No courses found for Student ID {student_id}")
     else:
