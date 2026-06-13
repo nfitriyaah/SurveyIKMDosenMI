@@ -90,7 +90,6 @@ if st.button("Show"):
             html += "</table>"
             components.html(html, height=400)
             #st.markdown(html, unsafe_allow_html=True)
-          
         else:
             st.warning(f"No courses found for Student ID {student_id}")
     else:
