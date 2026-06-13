@@ -42,7 +42,7 @@ if st.button("Show"):
 
         if not student_courses.empty:
             # Check if the courses are filled in response data
-            student_courses['IKM Sudah Terisi'] = student_courses['Matakuliah'].apply(
+            student_courses['Data Matakuliah'] = student_courses['Matakuliah'].apply(
                 lambda x: 'Sudah' if x in response_data_filtered['Data Matakuliah'].values else 'Belum'
             )
 
@@ -50,7 +50,7 @@ if st.button("Show"):
             def color_label(val):
                 return 'color: red' if val == 'Belum' else ''
 
-            styled_data = student_courses[['Matakuliah', 'IKM Sudah Terisi']].style.applymap(color_label, subset=['IKM Sudah Terisi'])
+            styled_data = student_courses[['Matakuliah', 'Data Matakuliah']].style.applymap(color_label, subset=['Data Matakuliah'])
 
             # Show the result
             st.subheader(f"Berikut Hasil Pengisian Survey oleh NIM: {student_id}")
