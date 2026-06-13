@@ -79,10 +79,8 @@ if st.button("Show"):
                 <tr>
                     <td style='border:1px solid black; padding:8px; text-align:center;'>{row['No']}</td>
                     <td style='border:1px solid black; padding:8px;'>{row['Matakuliah']}</td>
-                    <td style='border:1px solid black; padding:8px; color:{color}; font-weight:bold; text-align:center;'>
-                        {row['IKM']}
-                      </td>
-               </tr>
+                    <td style='border:1px solid black; padding:8px; color:{color}; font-weight:bold; text-align:center;'>{row['IKM']}</td>
+                </tr>
                 """
 
             html += "</table>"
