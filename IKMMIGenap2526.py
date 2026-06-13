@@ -54,17 +54,7 @@ if st.button("Show"):
             styled_data = (student_courses[['Matakuliah', 'Data Matakuliah']].style.map(color_label, subset=['Data Matakuliah']))
 
             # Show the result
-            """
-            st.subheader(f"Berikut Hasil Pengisian Survey oleh NIM: {student_id}")
-            result = student_courses[['Matakuliah', 'Data Matakuliah']].copy()
-            result.insert(0, 'No', range(1, len(result) + 1))
-            result['Data Matakuliah'] = result['Data Matakuliah'].replace({
-            'Sudah': '✅ Sudah',
-            'Belum': '❌ Belum'
-           })
-            result.rename(columns={'Data Matakuliah': 'IKM'}, inplace=True)
-            st.table(result)
-            """
+           
             st.subheader(f"Berikut Hasil Pengisian Survey oleh NIM: {student_id}")
     
             result = student_courses[['Matakuliah', 'Data Matakuliah']].copy()
