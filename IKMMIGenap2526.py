@@ -15,6 +15,9 @@ def load_data():
     course_database.columns = course_database.columns.str.strip()
     response_data.columns = response_data.columns.str.strip()
 
+    # Clean up data (strip and lowercase for consistency)
+    course_database['Matakuliah'] = course_database['Matakuliah'].str.strip().str.upper()
+    response_data['Data Matakuliah'] = response_data['Data Matakuliah'].str.strip().str.upper()
   
     # Ensure NIM columns are of the same type for comparison
     course_database['NIM'] = course_database['NIM'].astype(str)
