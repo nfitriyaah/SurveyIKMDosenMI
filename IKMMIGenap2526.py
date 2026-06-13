@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-# Function to load and clean data
+# Function to load and clean data 
 def load_data():
     DATABASE_SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSORMaNBQRUqmB_skALoV0wrwKF6bxkMt9XXPwvrfCGVcjyx5V095oO__F56qBKCMc3PSuVRvVJrfb5/pub?gid=1253144975&single=true&output=csv"
     RESPONSE_SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQKLowY_WcAWMUuXbTRfZJY5nl1hEnOdDdDhlqS-bXWmR38-VxjuFP2QqbTPOWUQEeUVSa-xHSaJHVW/pub?gid=0&single=true&output=csv"
